@@ -1,0 +1,20 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+                "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/users</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">54321</property>
+        <property name="hibernate.cache.use_second_level_cache">false</property>
+        <property name="hibernate.enable_lazy_load_no_trans">true</property>
+        <mapping class="ua.org.oa.grinchenkoa.webusers.entities.Role"/>
+        <mapping class="ua.org.oa.grinchenkoa.webusers.entities.User"/>
+        <mapping class="ua.org.oa.grinchenkoa.webusers.entities.Adress"/>
+        <mapping class="ua.org.oa.grinchenkoa.webusers.entities.MusicType"/>
+        <mapping class="ua.org.oa.grinchenkoa.webusers.entities.UserMusicType"/>
+        
+    </session-factory> 
+</hibernate-configuration>

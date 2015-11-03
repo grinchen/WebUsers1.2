@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	<jsp:root 	xmlns:jsp="http://java.sun.com/JSP/Page" 
+		  		xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+		  
+    <jsp:directive.page language="java"
+        contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" />
+    
+	<html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<title>Moderator</title>
+			<style>
+   				table { 
+    				width: 100%;
+    				border: 4px double black; 
+    				border-collapse: collapse; 
+   				}
+   				th { 
+    				text-align: left; 
+    				background: #ccc;
+    				padding: 5px; 
+    				border: 1px solid black; 
+   				}
+   				td { 
+    				padding: 5px; 
+    				border: 1px solid black; 
+   				}
+  			</style>
+		</head>
+		
+		<body>
+			<b>MODERATOR:</b>
+			<table>
+				<thead>
+					<tr style="background-color: gray;">
+						<td style="width: 50px;">Id</td>
+						<td style="width: 100px;">Login</td>
+						<td style="width: 200px;">BirthDate</td>
+						<td style="width: 140px;">E-mail</td>
+						<td style="width: 60px;">Country</td>
+						<td style="width: 100px;">Region</td>
+						<td style="width: 100px;">City</td>
+						<td style="width: 100px;">Street</td>
+						<td style="width: 40px;">Building</td>
+						<td style="width: 40px;">Appartment</td>
+						<td style="width: 30px;">Music</td>
+						<td style="width: 40px;">Role</td>
+	
+	
+					</tr>
+				</thead>
+				<c:forEach var="user" items="${userList}">
+					<tr>
+						<td>${user.id}</td>
+						<td>${user.login}</td>
+						<td>${user.birthDate}</td>
+						<td>${user.email}</td>
+						<td>${user.adress.country}</td>
+						<td>${user.adress.region}</td>
+						<td>${user.adress.city}</td>
+						<td>${user.adress.street}</td>
+						<td>${user.adress.building}</td>
+						<td>${user.adress.app}</td>
+						<td><c:forEach var="musicTypes" items="${user.userMusicTypes}">
+								${musicTypes.musicType.musicType}
+							</c:forEach>
+						</td>
+						<td>${user.role.roleName}</td>
+	
+					</tr>
+					<tr></tr>
+				</c:forEach>
+
+			</table>
+		</body>
+	</html>
+</jsp:root>
